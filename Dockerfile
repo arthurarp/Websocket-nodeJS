@@ -6,4 +6,4 @@ COPY . .
 
 RUN yarn install
 
-CMD ["yarn", "tsnd", "src/index.ts"]
+CMD ["yarn", "ts-node-dev", "src/index.ts"]

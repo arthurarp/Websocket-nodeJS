@@ -12,10 +12,11 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 const messages: any[] = [];
+var qtd_users = 0;
 
 mysocket.on('connection', (socket) => {
   console.log('New Connection: ' + socket.id);
-
+  console.log('Total Connections: ' + mysocket.engine.clientsCount);
   socket.emit('previousMessages', messages);
   var ip = socket.handshake.address;
   console.log(ip);
